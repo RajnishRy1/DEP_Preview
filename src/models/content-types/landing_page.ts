@@ -22,7 +22,10 @@ export type LandingPage = IContentItem<{
      * Codename: image
      */
     image: Elements.AssetsElement;
-
+    add_cover_image:Elements.AssetsElement;
+    add_a_title:Elements.TextElement;
+    add_content:Elements.RichTextElement;
+    add_description:Elements.TextElement;
     /**
      * Title (text)
      * Required: true

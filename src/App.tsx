@@ -10,7 +10,7 @@ function App() {
 
   // Retrieves the Website root item and saves the linked Landing page
   useEffect(() => {
-    deliveryClient.item<WebSpotlightRoot>('website_root')
+    deliveryClient.item<WebSpotlightRoot>('ku_root_item')
       .toPromise()
       .then(
         response => (
@@ -44,20 +44,24 @@ function App() {
             // Specifies an element codename using a strongly typed model
             data-kontent-element-codename={contentTypes.landing_page.elements.image.codename}
             className="App-logo"
-            src={landingPage.elements.image.value[0]?.url}
+            src={landingPage.elements.add_cover_image.value[0]?.url}
             // If an asset doesn't have an alt text description, use its file name
-            alt={landingPage.elements.image.value[0]?.description ||
-              landingPage.elements.image.value[0]?.name}
-            height={landingPage.elements.image.value[0]?.height || 200}
-            width={landingPage.elements.image.value[0]?.width || 300}
+            alt={landingPage.elements.add_cover_image.value[0]?.description ||
+              landingPage.elements.add_cover_image.value[0]?.name}
+            height={landingPage.elements.add_cover_image.value[0]?.height || 200}
+            width={landingPage.elements.add_cover_image.value[0]?.width || 300}
           />
           <h1
             data-kontent-element-codename={contentTypes.landing_page.elements.title.codename}>
-            {landingPage.elements.title.value}
+            {landingPage.elements.add_a_title.value}
           </h1>
+          <h3
+            data-kontent-element-codename={contentTypes.landing_page.elements.title.codename}>
+            {landingPage.elements.add_description.value}
+          </h3>
           <div
             data-kontent-element-codename={contentTypes.landing_page.elements.body.codename}
-            dangerouslySetInnerHTML={{ __html: landingPage.elements.body.value }}>
+            dangerouslySetInnerHTML={{ __html: landingPage.elements.add_content.value }}>
           </div>
         </div>
       )}
